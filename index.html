@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="module" src="./lib/menu.js"></script>
+  <style>
+    .tiny_context_menu {
+      border: 1px solid #e3e4e5;
+      background: #fff;
+      width: 250px;
+      box-shadow: 2px 2px 12px #e3e4e5;
+      padding: 5px 0;
+    }
+    .tiny_context_menu .menu-item {
+      padding: 5px 35px;
+      font-size: 14px;
+      user-select: none;
+    }
+    .tiny_context_menu .menu-item:hover {
+      background: #e3e4e5;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="parent" style="width:100px;height:100px;margin:200px;border:1px solid pink;background:#e3e4e5;">parent</div>
+
+  <script type="module">
+    import Menu from './menu.js';
+    const menu = new Menu();
+    menu.add('button1', () => console.log('button1'));
+    menu.add('button2', () => console.log('button2'));
+    menu.add('button3', () => console.log('button3'));
+    menu.mount('body');
+    document.querySelector('.parent').addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      menu.updatePosition(e.pageX, e.pageY);
+      menu.show();
+    });
+    document.querySelector('.parent').addEventListener('click', () => { menu.hide(); })
+  </script>
+</body>
+</html>

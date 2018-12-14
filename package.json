@@ -1,0 +1,30 @@
+{
+  "name": "tiny-context-menu",
+  "version": "0.1.0",
+  "description": "yet another context menu",
+  "main": "lib/menu.js",
+  "scripts": {
+    "build": "babel menu.js --out-dir ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosis23/tiny-context-menu.git"
+  },
+  "keywords": [
+    "contextmenu"
+  ],
+  "author": "Bohao Wang <bj050323@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnosis23/tiny-context-menu/issues"
+  },
+  "homepage": "https://github.com/gnosis23/tiny-context-menu#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+}
